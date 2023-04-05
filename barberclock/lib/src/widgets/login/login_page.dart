@@ -2,6 +2,7 @@ import 'package:barberclock/repository/apiadvisor/apiadvisor_repository.dart';
 import 'package:barberclock/services/client_http_service.dart';
 import 'package:barberclock/viewmodels/apiadvisor_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../components/custom_switch_widget.dart';
 import 'login_controller.dart';
@@ -13,13 +14,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  final controller = LoginController(
-    ApiadvisorViewModel(
-      ApiadvisorRepository(
-        ClientHttpService(),
-      ),
-    ),
-  );
+  final controller = Modular.get<LoginController>();
 
   @override
   Widget build(BuildContext context) {

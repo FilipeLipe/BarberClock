@@ -6,13 +6,11 @@ import 'package:flutter/cupertino.dart';
 
 class MainController {
 
-  static final MainController instance = MainController._();
+  final ChangeThemeViewModel changeThemeViewModel;
 
-  MainController._(){
-    changeThemeViewModel.init();
+  MainController(this.changeThemeViewModel){
+    this.changeThemeViewModel.init();
   }
-
-  final ChangeThemeViewModel changeThemeViewModel = ChangeThemeViewModel(storage: SharedLocalStorageService());
 
   bool get isDark => changeThemeViewModel.config.themeSwitch.value;
   ValueNotifier<bool> get themeSwitch => changeThemeViewModel.config.themeSwitch;

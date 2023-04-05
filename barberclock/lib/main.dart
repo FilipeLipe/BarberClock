@@ -1,9 +1,12 @@
 import 'package:barberclock/main_controller.dart';
 import 'package:barberclock/src/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
+import 'main_module.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ModularApp(module: MainModule(), child: MyApp(),));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return ValueListenableBuilder<bool>(
-        valueListenable: MainController.instance.themeSwitch,
+        valueListenable: Modular.get<MainController>().themeSwitch,
         builder: (context, idDark, child){
           return MaterialApp(
             title: 'Minha Aplicação',
