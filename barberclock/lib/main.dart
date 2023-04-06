@@ -1,3 +1,4 @@
+import 'package:barberclock/constants/ConstantesUtil.dart';
 import 'package:barberclock/main_controller.dart';
 import 'package:barberclock/src/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Minha Aplicação',
             theme: ThemeData(
+                scaffoldBackgroundColor: ConstantsUtil.CinzaEscuro,
                 primarySwatch: Colors.blue,
                 visualDensity: VisualDensity.adaptivePlatformDensity,
                 brightness: idDark ? Brightness.dark : Brightness.light
